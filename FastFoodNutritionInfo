@@ -1,0 +1,57 @@
+--imported dataset from CSV
+
+--view dataset
+
+SELECT *
+FROM FastFoodNutritionInfo
+
+
+
+-- count the number of rows of data there are
+
+SELECT COUNT(*)
+FROM FastFoodNutritionInfo
+
+
+
+-- find the average number of calories
+
+SELECT AVG(calories)
+FROM FastFoodNutritionInfo
+
+
+
+-- find the min serving size
+
+SELECT Min(serving_size)
+FROM FastFoodNutritionInfo
+
+
+
+-- find the max sodium size
+
+SELECT MAX(sodium) 
+FROM FastFoodNutritionInfo
+
+
+
+-- adding up all of the calories 
+
+SELECT SUM(calories)
+FROM FastFoodNutritionInfo
+
+
+
+-- determine the number of rows that include milkshake as the type
+
+SELECT Count(*)
+FROM FastFoodNutritionInfo
+WHERE type = 'Milkshake'
+
+
+-- Find the maximum number of calories by restaurant
+
+SELECT MAX(calories) AS calories, restaurant
+FROM FastFoodNutritionInfo
+GROUP BY restaurant
+ORDER BY MAX(calories) DESC
